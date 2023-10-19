@@ -28,6 +28,7 @@ foreach (var user in users)
 {
     if(user.Result > maxResult)
     {
+        maxResult = user.Result;
         UserWithMaxResult = user;
     }
 }
