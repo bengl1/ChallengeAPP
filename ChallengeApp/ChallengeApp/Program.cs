@@ -1,8 +1,8 @@
 ﻿using ChallengeApp;
 
-Employee user1 = new Employee("Robert ", "Kowalski ", "22 lata "); 
-Employee user2 = new Employee("Paweł ", "Nowak ", "32 lata ");
-Employee user3 = new Employee("Igor ", "Dudek ", "30 lat ");
+User user1 = new User("Robert ", "Kowalski ", "22 lata "); 
+User user2 = new User("Paweł ", "Nowak ", "32 lata ");
+User user3 = new User("Igor ", "Dudek ", "30 lat ");
 
 user1.AddScore(7);
 user1.AddScore(2);
@@ -16,13 +16,13 @@ user3.AddScore(4);
 user3.AddScore(4);
 user3.AddScore(7);
 
-List<Employee> users = new List<Employee>()
+List<User> users = new List<User>()
     {
          user1, user2, user3
     };
 
 int maxResult = 0;
-Employee UserWithMaxResult = null;
+User UserWithMaxResult = null;
 
 foreach (var user in users)
 {
