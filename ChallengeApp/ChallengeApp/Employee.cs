@@ -4,6 +4,17 @@
     {
         private List<int> score = new List<int>();
 
+        public User(string Name)
+        {
+            this.Name = Name;
+        }
+
+        public User(string Name, string Surname)
+        {
+            this.Name = Name;
+            this.Surname = Surname;
+        }
+
         public User(string Name, string Surname, string Age)
         {
             this.Name = Name;
