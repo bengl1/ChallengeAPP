@@ -1,37 +1,11 @@
 ﻿using ChallengeApp;
+using System;
 
-User user1 = new User("Robert ", "Kowalski ", "22 lata "); 
-User user2 = new User("Paweł ", "Nowak ", "32 lata ");
-User user3 = new User("Igor ", "Dudek ", "30 lat ");
-
-user1.AddScore(7);
-user1.AddScore(2);
-user1.AddScore(9);
-
-user2.AddScore(5);
-user2.AddScore(7);
-user2.AddScore(3);
-
-user3.AddScore(4);
-user3.AddScore(4);
-user3.AddScore(7);
-
-List<User> users = new List<User>()
-    {
-         user1, user2, user3
-    };
-
-int maxResult = 0;
-User UserWithMaxResult = null;
-
-foreach (var user in users)
-{
-    if(user.Result > maxResult)
-    {
-        maxResult = user.Result;
-        UserWithMaxResult = user;
-    }
-}
-
-Console.WriteLine(UserWithMaxResult.Name + UserWithMaxResult.Surname + UserWithMaxResult.Age +
-    "Uzyskał najwyższą ocenę "+ UserWithMaxResult.Result);
+var employee = new Employee("Jan", "Nowak");
+employee.AddGrade(2);
+employee.AddGrade(6);
+employee.AddGrade(2);
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
+Console.WriteLine($"Average: {statistics.Average:N2}");
