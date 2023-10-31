@@ -1,4 +1,5 @@
 ﻿using ChallengeApp;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
@@ -6,6 +7,7 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new Employee("Adam", "Nowak");
+
 
 while (true)
 {
@@ -16,7 +18,15 @@ while (true)
     {
         break;
     }
-    employee.AddGrade(input);
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch(Exception e)
+    {
+        Console.WriteLine($"Exception catche: { e.Message}");
+    }
+    
 }
 
 var statistics = employee.GetStatistics();
