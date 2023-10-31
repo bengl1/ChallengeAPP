@@ -8,45 +8,45 @@ namespace ChallengeApp.Test
         {
             //arrange;
             var employee = new Employee("Jan", "Nowak");
-            employee.AddGrade(2);
-            employee.AddGrade(2);
-            employee.AddGrade(6);
+            employee.AddGrade('c');
+            employee.AddGrade(100);
+            employee.AddGrade(80);
 
             //act;
-            var statistics = employee.GetStatistics;
+            var statistics = employee.GetStatistics();
             //assert;
 
-            Assert.AreEqual(6, statistics().Max);
+            Assert.AreEqual(100, statistics.Max);
         }
         [Test]
         public void WhenCorrectMin()
         {
             //arrange;
             var employee = new Employee("Jan", "Nowak");
-            employee.AddGrade(2);
-            employee.AddGrade(2);
+            employee.AddGrade(27);
+            employee.AddGrade('a');
             employee.AddGrade(6);
 
             //act;
-            var statistics = employee.GetStatistics;
+            var statistics = employee.GetStatistics();
             //assert;
 
-            Assert.AreEqual(2, statistics().Min);
+            Assert.AreEqual('C', statistics.AverageLetter);
         }
         [Test]
         public void WhenCorrectAverage()
         {
             //arrange;
             var employee = new Employee("Jan", "Nowak");
-            employee.AddGrade(2);
-            employee.AddGrade(2);
-            employee.AddGrade(6);
+            employee.AddGrade('d');
+            employee.AddGrade(20);
+            employee.AddGrade(60);
 
             //act;
-            var statistics = employee.GetStatistics;
+            var statistics = employee.GetStatistics();
             //assert;
 
-            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics().Average, 2));
+            Assert.AreEqual('C', statistics.AverageLetter);
         }
 
     }
