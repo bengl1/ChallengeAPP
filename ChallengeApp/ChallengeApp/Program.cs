@@ -6,7 +6,7 @@ Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new Employee("Adam", "Nowak", 'M');
+var employee = new Employee("Adam", "Nowak");
 
 
 while (true)

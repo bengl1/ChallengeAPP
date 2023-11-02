@@ -1,27 +1,21 @@
-﻿using System.Diagnostics;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
-    public class Employee : Person
+    public class Employee : IEmployee
     {
-        private const char sex = 'M';
-
         private List<float> grades = new List<float>();
-        private string surname;
 
-       
-        public Employee(string name, string surname, char sex)
-            : base(name, surname, sex)
+        public Employee(string name, string surname)
         {
+            this.Name = name;
+            this.Surname = surname;
         }
 
+        public string Name { get; private set; }
 
         public string Surname { get; private set; }
 
         public void AddGrade(float grade)
         {
-            int valueInInt = (int)grade;
-
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
@@ -83,6 +77,11 @@ namespace ChallengeApp
         {
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
+        }
+
+        public void AddGrade(int grade)
+        {
+            throw new NotImplementedException();
         }
 
         public Statistics GetStatistics()
