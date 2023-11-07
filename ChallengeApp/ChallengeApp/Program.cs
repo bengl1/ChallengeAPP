@@ -7,13 +7,18 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Adam", "Nowak");
+employee.GradeAdded += EmployeeGradeAdded;
 
-
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę.");
+}
 
 while (true)
 {
-    Console.WriteLine("podaj kolejną ocenę pracownika z zakresu (liczbowego 0-100) lub (literowego a-e): ");
-    Console.WriteLine("jeśli chcesz zobaczyć statystyki naciśnij q");
+    Console.WriteLine();
+    Console.WriteLine("Podaj kolejną ocenę pracownika z zakresu (liczbowego 0-100) lub (literowego a-e): ");
+    Console.WriteLine("Jeśli chcesz zobaczyć statystyki naciśnij q");
     var input = Console.ReadLine();
     if (input == "q")
     {
